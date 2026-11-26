@@ -2,10 +2,12 @@
 
 ```mermaid
 flowchart LR
-    T["test.py<br/>imports and calls functions; prints results"]
-    A["package/add.py<br/>add(a, b) → a + b"]
-    S["package/sub.py<br/>sub(a, b) → abs(a - b)"]
+    T["test.py<br/>Entry script"]
+    A["package/add.py<br/>add(a, b)"]
+    S["package/sub.py<br/>sub(a, b)"]
 
-    T -->|"imports and calls add"| A
-    T -->|"imports and calls sub"| S
+    T -->|"import and call"| A
+    T -->|"import and call"| S
+    A -->|"returns a + b"| T
+    S -->|"returns absolute(a - b)"| T
 ```
